@@ -36,6 +36,11 @@ struct ContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
+                
+                // Overlay detected objects
+                ForEach(cameraController.detectedObjects, id: \.id) { object in
+                    BoundingBoxView(object: object)
+                }
             }
             
             VStack {
@@ -92,6 +97,33 @@ struct ContentView: View {
         .background(Color.black.opacity(0.6))
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
+    }
+}
+
+struct BoundingBoxView: View {
+    let object: DetectedObject
+    
+    var body: some View {
+        GeometryReader { geometry in
+            let rect = CGRect(
+                x: object.boundingBox.minX * geometry.size.width,
+                y: object.boundingBox.minY * geometry.size.height,
+                width: object.boundingBox.width * geometry.size.width,
+                height: object.boundingBox.height * geometry.size.height
+            )
+            
+            Rectangle()
+                .path(in: rect)
+                .stroke(Color.red, lineWidth: 2)
+            
+            Text("\(object.label) (\(Int(object.confidence * 100))%)")
+                .font(.caption)
+                .foregroundColor(.white)
+                .padding(4)
+                .background(Color.black.opacity(0.7))
+                .cornerRadius(4)
+                .position(x: rect.midX, y: rect.minY - 10)
+        }
     }
 }
 

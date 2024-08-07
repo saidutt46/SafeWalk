@@ -1,12 +1,15 @@
 import AVFoundation
 import UIKit
+import Vision
 
 class CameraController: NSObject, ObservableObject {
     @Published var capturedImage: UIImage?
     @Published var isSessionRunning = false
     @Published var closestDepth: Float = Float.infinity
     @Published var errorMessage: String?
+    @Published var detectedObjects: [DetectedObject] = []
     
+    private let objectDetectionManager = ObjectDetectionManager()
     private let captureSession = AVCaptureSession()
     private var videoDataOutput: AVCaptureVideoDataOutput?
     private var depthDataOutput: AVCaptureDepthDataOutput?
@@ -139,6 +142,14 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate, AVCapt
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         let context = CIContext()
+        
+        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return }
+                
+        objectDetectionManager.detectObjects(in: cgImage) { [weak self] detectedObjects in
+            DispatchQueue.main.async {
+                self?.detectedObjects = detectedObjects
+            }
+        }
         
         let cropRect = calculateCenterCropRect(for: ciImage.extent)
         
