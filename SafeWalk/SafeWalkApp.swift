@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import AVFoundation
+import ARKit
+import Vision
+import CoreML
 
 @main
 struct SafeWalkApp: App {

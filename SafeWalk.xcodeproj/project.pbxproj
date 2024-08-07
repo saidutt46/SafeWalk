@@ -14,6 +14,13 @@
 		44F024AA2C618D9800B46A0A /* SafeWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024A92C618D9800B46A0A /* SafeWalkTests.swift */; };
 		44F024B42C618D9800B46A0A /* SafeWalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024B32C618D9800B46A0A /* SafeWalkUITests.swift */; };
 		44F024B62C618D9800B46A0A /* SafeWalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024B52C618D9800B46A0A /* SafeWalkUITestsLaunchTests.swift */; };
+		44F024C42C618EDF00B46A0A /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F024C32C618EDF00B46A0A /* ARKit.framework */; };
+		44F024C62C618EF000B46A0A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F024C52C618EF000B46A0A /* AVFoundation.framework */; };
+		44F024C82C618EFE00B46A0A /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F024C72C618EFE00B46A0A /* CoreML.framework */; };
+		44F024CA2C618F0E00B46A0A /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F024C92C618F0E00B46A0A /* Vision.framework */; };
+		44F024CC2C6191C500B46A0A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024CB2C6191C500B46A0A /* CameraController.swift */; };
+		44F024CE2C61A2CC00B46A0A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024CD2C61A2CC00B46A0A /* SplashScreenView.swift */; };
+		44F024D02C61FB6F00B46A0A /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F024CF2C61FB6F00B46A0A /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		44F024AF2C618D9800B46A0A /* SafeWalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeWalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F024B32C618D9800B46A0A /* SafeWalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeWalkUITests.swift; sourceTree = "<group>"; };
 		44F024B52C618D9800B46A0A /* SafeWalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeWalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		44F024C32C618EDF00B46A0A /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		44F024C52C618EF000B46A0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		44F024C72C618EFE00B46A0A /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		44F024C92C618F0E00B46A0A /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		44F024CB2C6191C500B46A0A /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		44F024CD2C61A2CC00B46A0A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		44F024CF2C61FB6F00B46A0A /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F024CA2C618F0E00B46A0A /* Vision.framework in Frameworks */,
+				44F024C62C618EF000B46A0A /* AVFoundation.framework in Frameworks */,
+				44F024C42C618EDF00B46A0A /* ARKit.framework in Frameworks */,
+				44F024C82C618EFE00B46A0A /* CoreML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +89,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44BFC3122C631ADD00BFC66E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44F024CF2C61FB6F00B46A0A /* HomePageView.swift */,
+				44F024CD2C61A2CC00B46A0A /* SplashScreenView.swift */,
+				44F0249A2C618D9700B46A0A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44BFC3132C631B1500BFC66E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44F024CB2C6191C500B46A0A /* CameraController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44BFC3142C631B2A00BFC66E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44F0249C2C618D9800B46A0A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44BFC3152C631B7400BFC66E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		44F0248C2C618D9700B46A0A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +129,7 @@
 				44F024A82C618D9800B46A0A /* SafeWalkTests */,
 				44F024B22C618D9800B46A0A /* SafeWalkUITests */,
 				44F024962C618D9700B46A0A /* Products */,
+				44F024C22C618EDF00B46A0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +146,11 @@
 		44F024972C618D9700B46A0A /* SafeWalk */ = {
 			isa = PBXGroup;
 			children = (
+				44BFC3152C631B7400BFC66E /* Utilities */,
+				44BFC3142C631B2A00BFC66E /* Resources */,
+				44BFC3132C631B1500BFC66E /* Controllers */,
+				44BFC3122C631ADD00BFC66E /* Views */,
 				44F024982C618D9700B46A0A /* SafeWalkApp.swift */,
-				44F0249A2C618D9700B46A0A /* ContentView.swift */,
-				44F0249C2C618D9800B46A0A /* Assets.xcassets */,
 				44F0249E2C618D9800B46A0A /* Preview Content */,
 			);
 			path = SafeWalk;
@@ -125,6 +179,17 @@
 				44F024B52C618D9800B46A0A /* SafeWalkUITestsLaunchTests.swift */,
 			);
 			path = SafeWalkUITests;
+			sourceTree = "<group>";
+		};
+		44F024C22C618EDF00B46A0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44F024C92C618F0E00B46A0A /* Vision.framework */,
+				44F024C72C618EFE00B46A0A /* CoreML.framework */,
+				44F024C52C618EF000B46A0A /* AVFoundation.framework */,
+				44F024C32C618EDF00B46A0A /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F024CC2C6191C500B46A0A /* CameraController.swift in Sources */,
 				44F0249B2C618D9700B46A0A /* ContentView.swift in Sources */,
 				44F024992C618D9700B46A0A /* SafeWalkApp.swift in Sources */,
+				44F024CE2C61A2CC00B46A0A /* SplashScreenView.swift in Sources */,
+				44F024D02C61FB6F00B46A0A /* HomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +493,18 @@
 				DEVELOPMENT_TEAM = K3YB5P2C9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to detect obstacles.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app uses your location to improve obstacle detection.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to improve obstacle detection.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for audio feedback about obstacles.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses the photo library for image analysis.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +529,18 @@
 				DEVELOPMENT_TEAM = K3YB5P2C9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to detect obstacles.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app uses your location to improve obstacle detection.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to improve obstacle detection.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for audio feedback about obstacles.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses the photo library for image analysis.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
